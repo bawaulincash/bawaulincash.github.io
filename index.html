@@ -127,6 +127,7 @@ section{padding:104px 0}
 .price small{font:500 15px Figtree,sans-serif;letter-spacing:0;color:var(--ink2)}
 .tier.sel .price small{color:#C5D3CB}
 .save{font-size:14px;font-weight:600;color:var(--bersama);min-height:21px}
+.save s{opacity:.7;font-weight:500}
 .tier ul{list-style:none;margin:6px 0 0;padding:0;flex:1}
 .tier li{padding:7px 0 7px 22px;position:relative;font-size:15.5px;color:var(--ink2);line-height:1.45}
 .tier li::before{content:"";position:absolute;left:2px;top:14px;width:9px;height:5px;border-left:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(-45deg)}
@@ -184,7 +185,7 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
 <header class="nav"><div class="w nv">
   <a class="brand" href="#"><img src="logo.png" alt="" width="40" height="40"><span>bawaulin<b>.cash</b></span></a>
   <nav class="nl" aria-label="Utama"><a href="#mode">Tiga mode</a><a href="#fitur">Fitur</a><a href="#harga">Paket</a><a href="#faq">Tanya jawab</a></nav>
-  <a class="btn fire sm2" href="https://bobypn01-star.github.io/bawaulintrip/">Coba gratis</a>
+  <a class="btn fire sm2" href="bawaulin_cash.apk" download type="application/vnd.android.package-archive">Coba gratis</a>
 </div></header>
 
 <main>
@@ -197,9 +198,10 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
       <h1><span>Lieur ngitung?</span><span style="color:var(--fire)">Bawa santai aja.</span></h1>
       <p class="lead">Aplikasi budgeting untuk penyelenggara open trip, tektok, dan pendakian bersama. Peserta, uang masuk dan keluar, bagi hasil, sampai kwitansi PDF, semuanya di HP dan jalan tanpa sinyal.</p>
       <div class="cta">
-        <a class="btn fire" href="https://bobypn01-star.github.io/bawaulintrip/">Pasang gratis (Basecamp)</a>
+        <a class="btn fire" href="bawaulin_cash.apk" download type="application/vnd.android.package-archive">Pasang gratis (Basecamp)</a>
         <a class="btn" href="#harga">Lihat paket</a>
       </div>
+      <p class="sm" style="margin-top:14px;max-width:52ch">Untuk HP Android. Setelah terunduh, buka file-nya dan izinkan pemasangan dari browser bila diminta. Chrome atau Play Protect bisa menampilkan peringatan karena aplikasi ini di luar Play Store; pilih tetap unduh atau pasang. Pakai iPhone? <a href="https://bobypn01-star.github.io/bawaulintrip/">Buka versi web</a>.</p>
       <p class="hint">Basecamp gratis selamanya. Paket berbayar bisa menyusul kapan saja, data tripmu tidak hilang.</p>
     </div>
     <div class="phones" aria-label="Tampilan aplikasi bawaulin.cash">
@@ -271,10 +273,10 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
 <div class="w">
   <div class="sec-head"><h2>Mulai dalam beberapa menit.</h2></div>
   <ol class="steps">
-    <li><h3>Pasang aplikasi</h3><p>Buka tautan aplikasi di HP lalu pasang. Basecamp langsung bisa dipakai tanpa bayar.</p></li>
-    <li><h3>Pilih paket</h3><p>Butuh lebih banyak? Pilih Sabana, Puncak, atau Edelweis di bawah dan chat kami lewat WhatsApp.</p></li>
-    <li><h3>Kirim kode perangkat</h3><p>Salin kode perangkat dari menu Akun, kirim bersama bukti bayar.</p></li>
-    <li><h3>Paket aktif</h3><p>Kamu menerima kunci aktivasi. Tempel di aplikasi, selesai.</p></li>
+    <li><h3>Pasang aplikasi</h3><p>Unduh aplikasinya di HP Android, buka file-nya, lalu pasang. Basecamp langsung bisa dipakai tanpa bayar.</p></li>
+    <li><h3>Pilih paket</h3><p>Butuh lebih banyak? Pilih Sabana, Puncak, atau Edelweis di bawah.</p></li>
+    <li><h3>Isi kode perangkat</h3><p>Salin kode perangkat dari aplikasi, tempel di halaman beli, lalu bayar lewat Midtrans.</p></li>
+    <li><h3>Paket aktif</h3><p>Setelah pembayaran terverifikasi, paket aktif otomatis di HP-mu. Tanpa kunci yang perlu ditempel.</p></li>
   </ol>
 </div>
 </section>
@@ -312,13 +314,13 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
         <li class="no">Sinkronisasi antar-HP</li>
         <li class="no">PDF dengan kop sendiri</li>
       </ul>
-      <a class="btn" href="https://bobypn01-star.github.io/bawaulintrip/">Pasang gratis</a>
+      <a class="btn" href="bawaulin_cash.apk" download type="application/vnd.android.package-archive">Pasang gratis</a>
     </article>
 
     <article class="tier">
       <div class="nm"><i style="background:var(--t-sabana)"></i>Sabana</div>
-      <div class="price" data-b="49.000" data-t="399.000">Rp<span class="n">49.000</span><small class="u">/bulan</small></div>
-      <div class="save" data-b="" data-t="Hemat sekitar 32% dari bulanan"></div>
+      <div class="price" data-k="sabana">Rp<span class="n">29.000</span><small class="u">/bulan</small></div>
+      <div class="save" data-k="sabana"></div>
       <p class="sm">Skala dan hasil profesional untuk penyelenggara aktif.</p>
       <ul>
         <li>Semua isi Basecamp</li>
@@ -329,13 +331,13 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
         <li>PDF dengan logo, kop, dan stempel sendiri</li>
         <li>Sinkronisasi 1 trip sampai 3 HP <span class="soon">Segera</span></li>
       </ul>
-      <a class="btn" data-paket="Sabana" href="#">Pilih Sabana</a>
+      <a class="btn" data-paket="sabana" href="beli.html?paket=sabana&amp;per=bulan">Pilih Sabana</a>
     </article>
 
     <article class="tier">
       <div class="nm"><i style="background:var(--t-puncak)"></i>Puncak</div>
-      <div class="price" data-b="99.000" data-t="799.000">Rp<span class="n">99.000</span><small class="u">/bulan</small></div>
-      <div class="save" data-b="" data-t="Hemat sekitar 33% dari bulanan"></div>
+      <div class="price" data-k="puncak">Rp<span class="n">59.000</span><small class="u">/bulan</small></div>
+      <div class="save" data-k="puncak"></div>
       <p class="sm">Untuk tim yang menjalankan banyak trip bersama.</p>
       <ul>
         <li>Semua isi Sabana</li>
@@ -346,13 +348,13 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
         <li>Riwayat siapa mengubah apa <span class="soon">Segera</span></li>
         <li>Catatan konflik data <span class="soon">Segera</span></li>
       </ul>
-      <a class="btn" data-paket="Puncak" href="#">Pilih Puncak</a>
+      <a class="btn" data-paket="puncak" href="beli.html?paket=puncak&amp;per=bulan">Pilih Puncak</a>
     </article>
 
     <article class="tier sel">
       <div class="nm"><i style="background:#F4F1E8"></i>Edelweis</div>
-      <div class="price">Rp999.000<small> sekali bayar</small></div>
-      <div class="save" style="color:#8FE0AE">Tanpa tanggal berakhir</div>
+      <div class="price" data-k="edelweis">Rp<span class="n">599.000</span><small class="u"> sekali bayar</small></div>
+      <div class="save" data-k="edelweis" style="color:#8FE0AE">Tanpa tanggal berakhir</div>
       <p class="sm">Puncak selamanya, selama layanan beroperasi.</p>
       <ul>
         <li>Semua isi Puncak</li>
@@ -363,10 +365,10 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
         <li>Sampai 8 HP per trip <span class="soon">Segera</span></li>
         <li>Lencana Edelweis di aplikasi</li>
       </ul>
-      <a class="btn fire" data-paket="Edelweis" href="#">Pilih Edelweis</a>
+      <a class="btn fire" data-paket="edelweis" href="beli.html?paket=edelweis">Pilih Edelweis</a>
     </article>
   </div>
-  <p class="note sm">Pembayaran saat ini lewat WhatsApp dan QRIS, lalu paket diaktifkan oleh kami. Bayar langsung di website menyusul. Fitur bertanda Segera masih dikerjakan dan belum bisa dipakai. Data lama selalu bisa dibaca dan diekspor di semua paket.</p>
+  <p class="note sm">Pembayaran lewat Midtrans (QRIS, e-wallet, transfer, dan lainnya sesuai yang tersedia). Paket aktif otomatis di HP-mu setelah pembayaran terverifikasi, dan perpanjangan dilakukan manual dengan membeli lagi. Kamu perlu kode perangkat dari aplikasi. Lebih nyaman lewat WhatsApp? <a href="https://wa.me/6289618805100?text=Halo%20bawaulin.cash%2C%20saya%20mau%20tanya%20soal%20paket.">Chat kami</a>. Fitur bertanda Segera masih dikerjakan dan belum bisa dipakai. Data lama selalu bisa dibaca dan diekspor di semua paket.</p>
 </div>
 </section>
 
@@ -375,7 +377,7 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
   <div class="sec-head"><h2>Tanya jawab sebelum kamu memilih.</h2></div>
   <div class="faq">
     <details><summary>Apakah bisa dipakai tanpa internet?</summary><p>Bisa. Semua fitur utama jalan offline. Aplikasi memeriksa status paket saat ada internet, jadi buka aplikasi dengan sinyal sesekali, misalnya sebelum berangkat.</p></details>
-    <details><summary>Di mana data trip disimpan?</summary><p>Di HP-mu. Server kami hanya menerima kode perangkat dan versi aplikasi untuk memeriksa paket, bukan data peserta atau uang. Cadangkan data secara rutin lewat menu Cadangan.</p></details>
+    <details><summary>Di mana data trip disimpan?</summary><p>Di HP-mu. Server kami hanya menerima kode perangkat dan versi aplikasi untuk memeriksa paket, serta data pembelian bila kamu membeli (email bila diisi, nominal, dan status pembayaran). Data peserta dan uang trip tidak dikirim. Cadangkan data secara rutin lewat menu Cadangan.</p></details>
     <details><summary>Apa isi paket Basecamp, dan sampai kapan gratis?</summary><p>Basecamp gratis selamanya: satu trip aktif di tiga mode dengan semua fitur dasar. Trip baru boleh dibuat setelah trip sebelumnya ditutup, jumlahnya tidak dibatasi.</p></details>
     <details><summary>Bagaimana kalau ganti HP?</summary><p>Minta kunci baru lewat WhatsApp dengan nomor yang cocok dengan data pembelian. Ganti HP gratis maksimal 2 kali per tahun, dan lebih longgar untuk Edelweis.</p></details>
     <details><summary>Kapan sinkronisasi antar-HP tersedia?</summary><p>Sedang dikerjakan dan belum bisa dipakai. Fitur ini ditandai Segera di daftar paket.</p></details>
@@ -405,25 +407,36 @@ footer{padding:28px 0 40px;font-size:14px;color:var(--ink2)}
 
 <script>
 (function(){
-  var bln=document.getElementById('bBln'), thn=document.getElementById('bThn');
-  function set(t){
-    bln.setAttribute('aria-pressed',String(!t)); thn.setAttribute('aria-pressed',String(t));
-    document.querySelectorAll('.price[data-b]').forEach(function(p){
-      p.querySelector('.n').textContent=t?p.dataset.t:p.dataset.b;
-      p.querySelector('.u').textContent=t?'/tahun':'/bulan';
+  var SRV='https://eqrubezljxejfnjgqigb.supabase.co/functions/v1/hyper-action';
+  /* Cadangan = harga perkenalan; bila server menjawab, harga dari server (admin) dipakai. */
+  var H={sabana_bulan:{normal:49000,jual:29000},sabana_tahun:{normal:399000,jual:239000},puncak_bulan:{normal:99000,jual:59000},puncak_tahun:{normal:799000,jual:479000},edelweis_sekali:{normal:999000,jual:599000}};
+  var bln=document.getElementById('bBln'), thn=document.getElementById('bThn'), tahun=false;
+  var rp=function(n){return 'Rp'+new Intl.NumberFormat('id-ID').format(n)}, nf=function(n){return new Intl.NumberFormat('id-ID').format(n)};
+  function paint(){
+    bln.setAttribute('aria-pressed',String(!tahun)); thn.setAttribute('aria-pressed',String(tahun));
+    ['sabana','puncak','edelweis'].forEach(function(k){
+      var key=k==='edelweis'?'edelweis_sekali':k+(tahun?'_tahun':'_bulan'), h=H[key]; if(!h) return;
+      var p=document.querySelector('.price[data-k="'+k+'"]'), s=document.querySelector('.save[data-k="'+k+'"]'), a=document.querySelector('[data-paket="'+k+'"]');
+      p.querySelector('.n').textContent=nf(h.jual);
+      if(k!=='edelweis') p.querySelector('.u').textContent=tahun?'/tahun':'/bulan';
+      var t=[];
+      if(h.normal>h.jual) t.push('<s>'+rp(h.normal)+'</s> harga perkenalan');
+      if(k==='edelweis') t.push('Tanpa tanggal berakhir');
+      else if(tahun&&H[k+'_bulan']){var d=Math.round((1-h.jual/(12*H[k+'_bulan'].jual))*100); if(d>0) t.push('Hemat sekitar '+d+'% dari bulanan');}
+      s.innerHTML=t.join(' · ')||'&nbsp;';
+      if(a&&k!=='edelweis') a.href='beli.html?paket='+k+'&per='+(tahun?'tahun':'bulan');
     });
-    document.querySelectorAll('.save[data-t]').forEach(function(s){ s.textContent=t?s.dataset.t:' '; });
   }
-  bln.onclick=function(){set(false)}; thn.onclick=function(){set(true)};
-  document.querySelectorAll('[data-paket]').forEach(function(a){
-    a.addEventListener('click',function(e){
-      e.preventDefault();
-      var p=a.dataset.paket, t=thn.getAttribute('aria-pressed')==='true';
-      var per = p==='Edelweis' ? 'sekali bayar' : (t?'tahunan':'bulanan');
-      var msg='Halo bawaulin.cash, saya mau paket '+p+' ('+per+'). Mohon info cara bayarnya.';
-      window.open('https://wa.me/6289618805100?text='+encodeURIComponent(msg),'_blank','noopener');
-    });
-  });
+  bln.onclick=function(){tahun=false;paint()}; thn.onclick=function(){tahun=true;paint()};
+  paint();
+  try{
+    fetch(SRV,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({a:'harga_info',v:'web'})})
+      .then(function(r){return r.json()}).then(function(j){
+        if(!j||!j.ok||!j.harga) return;
+        Object.keys(H).forEach(function(k){var x=j.harga[k]; if(x&&x.jual>0&&x.normal>=x.jual) H[k]={normal:x.normal,jual:x.jual};});
+        paint();
+      }).catch(function(){});
+  }catch(e){}
 })();
 </script>
 </body>
