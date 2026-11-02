@@ -29,7 +29,7 @@ fieldset{border:0;margin:0;padding:0}
 .tier b{font-size:18px}
 .tier input:checked~.dot{background:var(--ora);border-color:var(--ora)}
 .tier input:checked~.row{border-color:var(--ora);box-shadow:0 0 0 1px var(--ora)}
-.tier input:focus-visible~.row,button:focus-visible,input[type=text]:focus-visible,input[type=email]:focus-visible,a:focus-visible{outline:3px solid var(--ora);outline-offset:2px}
+.tier input:focus-visible~.row,button:focus-visible,input[type=text]:focus-visible,input[type=email]:focus-visible,input[type=tel]:focus-visible,a:focus-visible{outline:3px solid var(--ora);outline-offset:2px}
 .seg{display:flex;gap:8px;margin-top:4px}
 .seg button{flex:1;margin:0;padding:11px 8px;border:1.5px solid var(--line);border-radius:10px;background:transparent;color:var(--ink);font:inherit;font-weight:600;cursor:pointer}
 .seg button[aria-pressed=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
@@ -38,7 +38,7 @@ fieldset{border:0;margin:0;padding:0}
 .price .big{font-size:34px;font-weight:800;letter-spacing:-.5px;line-height:1.1;font-variant-numeric:tabular-nums}
 .price small{display:block;opacity:.8;margin-top:4px}
 label{display:block;margin:16px 0 6px;font-weight:600;font-size:14px}
-input[type=text],input[type=email]{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surf);color:var(--ink);font:inherit}
+input[type=text],input[type=email],input[type=tel]{width:100%;padding:13px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surf);color:var(--ink);font:inherit}
 #kode{font-family:ui-monospace,Menlo,Consolas,monospace;letter-spacing:1px}
 .chk{display:flex;gap:10px;align-items:flex-start;font-weight:400;margin-top:18px}
 .chk input{width:20px;height:20px;margin:3px 0 0;flex:none;accent-color:var(--ora)}
@@ -82,6 +82,13 @@ a{color:inherit}
   <input type="text" id="kode" inputmode="text" autocomplete="off" autocapitalize="characters" spellcheck="false" placeholder="BU-ABCD-2345" maxlength="14">
   <p class="mut" style="margin-top:6px">Salin kode perangkat dari aplikasi bawaulin.cash di HP yang akan memakai paket ini. Satu kode untuk satu HP.</p>
 
+  <h2>Data pembeli</h2>
+  <label for="nm">Nama</label>
+  <input type="text" id="nm" autocomplete="name" maxlength="60" placeholder="nama kamu">
+  <label for="wa">Nomor WhatsApp</label>
+  <input type="tel" id="wa" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="0812xxxxxxxx">
+  <p class="mut" style="margin-top:6px">Dipakai untuk bantuan, bukti pembelian, dan pembukuan. Tidak dibagikan ke pihak lain.</p>
+
   <label for="em">Email (boleh dikosongkan)</label>
   <input type="email" id="em" inputmode="email" autocomplete="email" placeholder="untuk bukti pembayaran dari Midtrans">
 
@@ -89,7 +96,7 @@ a{color:inherit}
 
   <div class="msg bad" id="mErr" role="alert" hidden></div>
   <button class="btn" id="bayar" disabled>Memuat...</button>
-  <p class="mut" style="margin-top:12px">Kami tidak menyimpan data kartu. Data yang tersimpan hanya kode perangkat, email (bila diisi), dan data transaksi.</p>
+  <p class="mut" style="margin-top:12px">Kami tidak menyimpan data kartu. Data yang tersimpan hanya kode perangkat, nama, nomor WhatsApp, email (bila diisi), dan data transaksi.</p>
 
   <h2>Sudah membayar?</h2>
   <label for="no">Nomor pesanan</label>
@@ -106,7 +113,7 @@ var SRV='https://eqrubezljxejfnjgqigb.supabase.co/functions/v1/hyper-action';
 var WA='https://wa.me/6289618805100';
 var RE=/^BU-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}$/;
 var T={sabana:'Sabana',puncak:'Puncak',edelweis:'Edelweis'},P={bulan:'30 hari',tahun:'1 tahun',sekali:'Sekali bayar'};
-var ERR={syarat:'Centang persetujuan dulu.',email:'Email tidak valid.',paket:'Paket tidak dikenal.',gateway:'Pembayaran sedang tidak tersedia. Coba lagi nanti atau hubungi penjual.',sibuk:'Server sibuk. Coba lagi sebentar lagi.',kode:'Kode perangkat ini belum terdaftar. Buka aplikasi dengan internet dulu, lalu salin ulang kodenya.',dicabut:'Lisensi perangkat ini dicabut. Hubungi penjual.',sudah_edelweis:'HP ini sudah memakai Edelweis.',lebih_rendah:'HP ini sudah di paket yang lebih tinggi dari pilihanmu.',banyak:'Ada terlalu banyak pesanan yang masih menunggu. Selesaikan atau tunggu sampai kedaluwarsa.',izin:'Kode ini belum bisa dipakai membeli dari website. Beli lewat tombol Beli di aplikasi atau hubungi penjual.',format:'Data tidak valid.'};
+var ERR={nama:'Nama belum benar (2 sampai 60 huruf).',wa:'Nomor WhatsApp belum benar. Contoh: 081234567890.',identitas:'Isi nama dan nomor WhatsApp dulu.',syarat:'Centang persetujuan dulu.',email:'Email tidak valid.',paket:'Paket tidak dikenal.',gateway:'Pembayaran sedang tidak tersedia. Coba lagi nanti atau hubungi penjual.',sibuk:'Server sibuk. Coba lagi sebentar lagi.',kode:'Kode perangkat ini belum terdaftar. Buka aplikasi dengan internet dulu, lalu salin ulang kodenya.',dicabut:'Lisensi perangkat ini dicabut. Hubungi penjual.',sudah_edelweis:'HP ini sudah memakai Edelweis.',lebih_rendah:'HP ini sudah di paket yang lebih tinggi dari pilihanmu.',banyak:'Ada terlalu banyak pesanan yang masih menunggu. Selesaikan atau tunggu sampai kedaluwarsa.',izin:'Kode ini belum bisa dipakai membeli dari website. Beli lewat tombol Beli di aplikasi atau hubungi penjual.',format:'Data tidak valid.'};
 var S={tier:'sabana',per:'bulan',h:null};
 var $=function(i){return document.getElementById(i)};
 var rp=function(n){return 'Rp'+new Intl.NumberFormat('id-ID').format(n)};
@@ -162,14 +169,17 @@ async function bayar(){
   err('');
   var id=norm($('kode').value);$('kode').value=id;
   if(!RE.test(id))return err('Kode perangkat belum benar. Contoh: BU-ABCD-2345.');
+  var nm=$('nm').value.replace(/\s+/g,' ').trim(),wa=$('wa').value.replace(/[\s().-]/g,'');
+  if(nm.length<2||nm.length>60)return err(ERR.nama);
+  if(!/^\+?\d{9,15}$/.test(wa))return err(ERR.wa);
   if(!$('sy').checked)return err(ERR.syarat);
   var b=$('bayar');b.dataset.busy='1';b.disabled=true;b.textContent='Membuat tagihan...';
-  var r=await api('ord_buat',{id:id,tier:S.tier,per:S.per,syarat:1,email:$('em').value.trim()});
+  var r=await api('ord_buat',{id:id,tier:S.tier,per:S.per,syarat:1,nama:nm,wa:wa,email:$('em').value.trim()});
   if(!r||!r.ok||!/^https:\/\//.test(r.url||'')){
     delete b.dataset.busy;render();
     return err(r?(ERR[r.err]||'Gagal membuat tagihan. Coba lagi.'):'Server tidak terjangkau. Coba lagi nanti.');
   }
-  ls.s('bc_kode',id);ls.s('bc_oid',r.oid||'');
+  ls.s('bc_kode',id);ls.s('bc_oid',r.oid||'');ls.s('bc_nama',nm);ls.s('bc_wa',wa);
   b.textContent='Mengalihkan ke Midtrans...';
   location.href=r.url;
 }
@@ -202,6 +212,7 @@ async function init(){
   var o=(q.get('order_id')||q.get('o')||'').trim();
   if(o)return status(o);
   var k=norm(q.get('kode')||ls.g('bc_kode'));if(k)$('kode').value=k;
+  if(ls.g('bc_nama'))$('nm').value=ls.g('bc_nama');if(ls.g('bc_wa'))$('wa').value=ls.g('bc_wa');
   var last=ls.g('bc_oid');if(last)$('no').value=last;
   var t=q.get('paket');if(T[t]){S.tier=t;if(t==='edelweis')S.per='sekali'}
   if(q.get('per')==='tahun'&&S.tier!=='edelweis')S.per='tahun';
