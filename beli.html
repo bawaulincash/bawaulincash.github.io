@@ -113,7 +113,7 @@ var SRV='https://eqrubezljxejfnjgqigb.supabase.co/functions/v1/hyper-action';
 var WA='https://wa.me/6289618805100';
 var RE=/^BU-[A-HJ-NP-Z2-9]{4}-[A-HJ-NP-Z2-9]{4}$/;
 var T={sabana:'Sabana',puncak:'Puncak',edelweis:'Edelweis'},P={bulan:'30 hari',tahun:'1 tahun',sekali:'Sekali bayar'};
-var ERR={nama:'Nama belum benar (2 sampai 60 huruf).',wa:'Nomor WhatsApp belum benar. Contoh: 081234567890.',identitas:'Isi nama dan nomor WhatsApp dulu.',syarat:'Centang persetujuan dulu.',email:'Email tidak valid.',paket:'Paket tidak dikenal.',gateway:'Pembayaran sedang tidak tersedia. Coba lagi nanti atau hubungi penjual.',sibuk:'Server sibuk. Coba lagi sebentar lagi.',kode:'Kode perangkat ini belum terdaftar. Buka aplikasi dengan internet dulu, lalu salin ulang kodenya.',dicabut:'Lisensi perangkat ini dicabut. Hubungi penjual.',sudah_edelweis:'HP ini sudah memakai Edelweis.',lebih_rendah:'HP ini sudah di paket yang lebih tinggi dari pilihanmu.',banyak:'Ada terlalu banyak pesanan yang masih menunggu. Selesaikan atau tunggu sampai kedaluwarsa.',izin:'Kode ini belum bisa dipakai membeli dari website. Beli lewat tombol Beli di aplikasi atau hubungi penjual.',format:'Data tidak valid.'};
+var ERR={ditutup:'Pembelian sedang ditutup sementara.',nama:'Nama belum benar (2 sampai 60 huruf).',wa:'Nomor WhatsApp belum benar. Contoh: 081234567890.',identitas:'Isi nama dan nomor WhatsApp dulu.',syarat:'Centang persetujuan dulu.',email:'Email tidak valid.',paket:'Paket tidak dikenal.',gateway:'Pembayaran sedang tidak tersedia. Coba lagi nanti atau hubungi penjual.',sibuk:'Server sibuk. Coba lagi sebentar lagi.',kode:'Kode perangkat ini belum terdaftar. Buka aplikasi dengan internet dulu, lalu salin ulang kodenya.',dicabut:'Lisensi perangkat ini dicabut. Hubungi penjual.',sudah_edelweis:'HP ini sudah memakai Edelweis.',lebih_rendah:'HP ini sudah di paket yang lebih tinggi dari pilihanmu.',banyak:'Ada terlalu banyak pesanan yang masih menunggu. Selesaikan atau tunggu sampai kedaluwarsa.',izin:'Kode ini belum bisa dipakai membeli dari website. Beli lewat tombol Beli di aplikasi atau hubungi penjual.',format:'Data tidak valid.'};
 var S={tier:'sabana',per:'bulan',h:null};
 var $=function(i){return document.getElementById(i)};
 var rp=function(n){return 'Rp'+new Intl.NumberFormat('id-ID').format(n)};
@@ -161,7 +161,8 @@ function render(){
   if(h){pr.innerHTML=(h.normal>h.jual?'<s>'+rp(h.normal)+'</s>':'')+'<div class="big">'+rp(h.jual)+'</div><small>'+T[S.tier]+' · '+P[S.per]+(h.normal>h.jual?' · harga perkenalan':'')+'</small>'}
   else pr.textContent=S.h?'Harga belum tersedia.':'Memuat harga...';
   var siap=!!(S.h&&S.h.siap&&h),b=$('bayar');
-  if(!b.dataset.busy){b.disabled=!siap;b.textContent=siap?'Bayar sekarang':(S.h?'Pembayaran belum dibuka':'Memuat...')}
+  if(!b.dataset.busy){b.disabled=!siap;b.textContent=siap?'Bayar sekarang':(S.h&&S.h.ditutup?'Pembelian ditutup':(S.h?'Pembayaran belum dibuka':'Memuat...'))}
+  if(S.h&&S.h.ditutup){var dn=document.createElement('div');dn.className='mut';dn.style.marginTop='8px';dn.textContent=S.h.pesan||'Pembelian sedang ditutup sementara.';pr.appendChild(dn)}
   $('mSand').hidden=!(S.h&&S.h.mode==='sandbox');
 }
 
@@ -177,7 +178,7 @@ async function bayar(){
   var r=await api('ord_buat',{id:id,tier:S.tier,per:S.per,syarat:1,nama:nm,wa:wa,email:$('em').value.trim()});
   if(!r||!r.ok||!/^https:\/\//.test(r.url||'')){
     delete b.dataset.busy;render();
-    return err(r?(ERR[r.err]||'Gagal membuat tagihan. Coba lagi.'):'Server tidak terjangkau. Coba lagi nanti.');
+    return err(r?((r.err==='ditutup'&&r.pesan)?r.pesan:(ERR[r.err]||'Gagal membuat tagihan. Coba lagi.')):'Server tidak terjangkau. Coba lagi nanti.');
   }
   ls.s('bc_kode',id);ls.s('bc_oid',r.oid||'');ls.s('bc_nama',nm);ls.s('bc_wa',wa);
   b.textContent='Mengalihkan ke Midtrans...';
