@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="style.css"></head><body>
 <header class="nav"><div class="w nv"><a class="brand" href="./"><img src="logo.png" alt="bawaulin.trip" width="53" height="46"><span>bawaulin<b>.cash</b></span></a>
 <nav class="nl" aria-label="Utama"><a href="./#mode">Tiga mode</a><a href="./#fitur">Fitur</a><a href="./#pilih">Yang cocok</a><a href="./#harga">Harga</a><a href="bantuan.html">Bantuan</a><a href="faq.html">Tanya jawab</a></nav>
-<a class="btn sun s" href="https://wa.me/6289618805100?text=Halo%20bawaulin.cash%2C%20saya%20mau%20minta%20akses%20aplikasinya.">Minta akses</a></div></header>
+<a class="btn sun s" href="bawaulin_cash.apk" download data-apk>Unduh APK</a></div></header>
 <main class="doc"><div class="w"><h1>Status pesanan</h1><p class="lead" style="margin-top:12px">Masukkan nomor pesanan (diawali BT-) untuk melihat sampai mana prosesnya.</p><div class="stf"><label for="no">Nomor pesanan</label><input type="text" id="no" autocomplete="off" spellcheck="false" placeholder="BT-..."><button class="btn" id="cek" type="button">Cek pesanan</button></div><div id="stH" hidden aria-live="polite"></div><div class="cards2" style="margin-top:28px"><a class="card" href="bantuan.html"><h3>Pusat bantuan</h3><p>Langkah sesudah bayar dan masalah umum.</p></a><a class="card" href="beli.html"><h3>Beli paket</h3><p>Belum punya pesanan? Mulai dari sini.</p></a></div></main><footer><div class="w"><span>bawaulin.cash, produk bawaulin.trip. Lieur ngitung, bawa santai.</span>
 <nav aria-label="Dokumen"><a href="syarat.html">Syarat &amp; Ketentuan</a><a href="privasi.html">Privasi &amp; Refund</a><a href="bantuan.html">Bantuan</a><a href="status.html">Status pesanan</a><a href="faq.html">FAQ</a><a href="beli.html">Beli</a></nav></div></footer><script>(function(){var SRV="https://eqrubezljxejfnjgqigb.supabase.co/functions/v1/hyper-action",WA="https://wa.me/6289618805100",T={sabana:"Sabana",puncak:"Puncak",edelweis:"Edelweis"},$=function(i){return document.getElementById(i)},poll=0,tm=0;
 function esc(s){return String(s==null?"":s).replace(/[&<>"]/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]})}
@@ -30,4 +30,4 @@ function go(){var v=$("no").value.trim();if(v){poll=0;status(v)}}
 $("cek").addEventListener("click",go);$("no").addEventListener("keydown",function(e){if(e.key==="Enter")go()});
 var q;try{q=new URLSearchParams(location.search)}catch(e){}var o=((q&&(q.get("o")||q.get("order_id")))||"").trim();
 if(!o){try{o=localStorage.getItem("bc_oid")||""}catch(e){}}
-if(o){$("no").value=o;status(o)}})();</script></body></html>
+if(o){$("no").value=o;status(o)}})();</script><script src="apk.js" defer></script></body></html>
