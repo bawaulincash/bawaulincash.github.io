@@ -102,7 +102,7 @@ footer{padding:30px 0 44px;font-size:14.5px;color:#CFE6D6;background:var(--fores
 .by .lg{background:#fff;border-radius:18px;padding:12px;flex:none}.by .lg img{height:84px}
 .hero .eyb,.sec-head .eyb{margin-bottom:16px}
 
-/* v5.5.1 tur, perbandingan, status, bantuan */
+/* v5.5.2 harga, kartu lencana, galeri | v5.5.1 tur, perbandingan, status, bantuan */
 .tur{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;-webkit-overflow-scrolling:touch}
 .tur figure{margin:0;flex:0 0 min(260px,72vw);scroll-snap-align:center}
 .tur img{width:100%;height:auto;border-radius:24px;border:6px solid #1a0f08;background:#1a0f08}
@@ -122,3 +122,28 @@ footer{padding:30px 0 44px;font-size:14.5px;color:#CFE6D6;background:var(--fores
 .tl .done i{background:var(--leafd);border-color:var(--leafd);color:#fff}.tl .cur i{border-color:var(--fire);color:var(--fire)}.tl .bad i{background:#B3261E;border-color:#B3261E;color:#fff}.tl .done,.tl .cur,.tl .bad{color:var(--ink);font-weight:600}
 .nx{padding-left:22px;margin:0}.nx li{margin:6px 0}
 @media(max-width:700px){.cards2{grid-template-columns:1fr}.cmpc .hb{margin-left:0}}
+
+/* v5.5.2 kartu lencana besar dan galeri aplikasi */
+.tiers{grid-template-columns:repeat(2,1fr);gap:26px}
+.tier{border:2px solid var(--c1);border-radius:26px;box-shadow:0 30px 60px -34px var(--c2),0 2px 0 rgba(255,255,255,.6) inset;transition:transform .25s,box-shadow .25s}
+.tier:hover{transform:translateY(-6px);box-shadow:0 40px 70px -32px var(--c2)}
+.tier .top{padding:34px 32px 28px;display:grid;grid-template-columns:auto 1fr;column-gap:20px;align-items:center}
+.tier .top .lc{grid-row:1/3;width:92px;height:92px;filter:drop-shadow(0 8px 14px rgba(0,0,0,.28))}
+.tier .nm{font-size:34px;margin-top:0;align-self:end}
+.tier .tg{font-size:13px;align-self:start}
+.tier .bd{padding:26px 32px 32px;gap:14px}
+.tier .price{font-size:clamp(40px,5vw,54px);padding:16px 20px;margin:0 -8px;border-radius:18px;background:linear-gradient(135deg,var(--c1),var(--c2));color:var(--tc,#fff);box-shadow:0 14px 26px -16px var(--c2)}
+.tier .price small{color:inherit;opacity:.85;font-size:16px}
+.tier .price.ld{font-size:22px}
+.tier .save{font-size:15px;min-height:22px;text-align:center}
+.tier .who{font-size:17px;min-height:0;color:var(--ink);font-weight:500}
+.tier ul{font-size:16px}.tier li{padding:8px 0 8px 28px}.tier li::before{top:16px}.tier li.no::before{top:20px}
+.tier .btn{min-height:58px;font-size:18px;border-radius:16px}
+@media(max-width:760px){.tiers{grid-template-columns:1fr}.tier .top{padding:26px 22px 22px}.tier .top .lc{width:72px;height:72px}.tier .nm{font-size:28px}.tier .bd{padding:22px 22px 26px}}
+.gf{display:flex;flex-wrap:wrap;gap:10px;margin:0 0 18px}
+.gf button{border:1.5px solid var(--ink);background:#fff;color:var(--ink);font:700 15px var(--f);padding:10px 18px;border-radius:999px;cursor:pointer;min-height:44px}
+.gf button[aria-pressed=true]{background:var(--ink);color:#fff}
+.tur figure{flex:0 0 min(280px,74vw)}
+.tur figure[hidden]{display:none}
+.tg2{display:inline-block;margin-bottom:8px;padding:3px 10px;border-radius:999px;font:700 11.5px var(--h);letter-spacing:.04em;background:#e6f4ea;color:var(--leafd)}
+.tg2.up{background:#fff0d6;color:#8a4b00}
