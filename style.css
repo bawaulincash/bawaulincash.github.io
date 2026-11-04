@@ -101,3 +101,24 @@ footer{padding:30px 0 44px;font-size:14.5px;color:#CFE6D6;background:var(--fores
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
 .by .lg{background:#fff;border-radius:18px;padding:12px;flex:none}.by .lg img{height:84px}
 .hero .eyb,.sec-head .eyb{margin-bottom:16px}
+
+/* v5.5.0 tur, alat, kalkulator, panduan */
+.tur{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;padding:4px 2px 18px;-webkit-overflow-scrolling:touch}
+.tur figure{margin:0;flex:0 0 min(260px,72vw);scroll-snap-align:center}
+.tur img{width:100%;height:auto;border-radius:24px;border:6px solid #1a0f08;background:#1a0f08}
+.tur figcaption{margin-top:12px;font-size:15px;color:var(--mut)}
+.turb{display:flex;gap:10px;margin-top:8px}
+.turb button{min-width:48px;min-height:48px;border-radius:12px;border:1.5px solid var(--ink);background:#fff;color:var(--ink);font:700 24px var(--f);cursor:pointer}
+.turb button:hover{background:var(--ink);color:var(--bg)}
+.alg{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.alg a.card{display:block;margin:0;text-decoration:none;color:inherit}.alg a.card:hover{border-color:var(--fire)}
+.kal{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start}
+.kal label{display:block;font-weight:600;margin:16px 0 6px}.kal label:first-child{margin-top:0}
+.kal input{width:100%;min-height:48px;padding:0 14px;border:1.5px solid var(--line);border-radius:12px;background:#fff;color:var(--ink);font:500 16px var(--f)}
+.kal input:focus-visible{border-color:var(--fire)}
+.hint{font-size:14px;color:var(--mut);margin-top:4px}
+.res{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:8px 22px 16px}
+.res dl{margin:0}.res .r{display:flex;justify-content:space-between;align-items:baseline;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.res dt{color:var(--mut)}.res dd{margin:0;font:700 18px var(--h);text-align:right}.res .big dd{font-size:26px;color:var(--leafd)}
+.art h2{font-size:clamp(23px,3vw,28px);margin:40px 0 6px}.art p{margin:10px 0;max-width:66ch}
+@media(max-width:700px){.kal,.alg{grid-template-columns:1fr}}
